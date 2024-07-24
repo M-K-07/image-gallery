@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+@media  (max-width:650px) {
+    .gallery{
+        -webkit-column-count: 3;
+    }
+}
+@media  (min-width:768px) {
+    .gallery{
+        -webkit-column-count: 4;
+    }
+}
+@media  (min-width:1024px) {
+    .gallery{
+        -webkit-column-count: 5;
+    }
+}
