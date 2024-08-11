@@ -18,12 +18,12 @@ body::-webkit-scrollbar{
 
 @media  (max-width:650px) {
     .gallery{
-        -webkit-column-count: 3;
+        -webkit-column-count: 2;
     }
 }
 @media  (min-width:768px) {
     .gallery{
-        -webkit-column-count: 4;
+        -webkit-column-count: 3;
     }
 }
 @media  (min-width:1024px) {
