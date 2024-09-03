@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import Loader from "../assets/infinite-spinner.svg";
+import { info } from "autoprefixer";
 
 const ImageCard = () => {
   const [data, setData] = useState([]);
@@ -12,6 +13,7 @@ const ImageCard = () => {
     const info = await api.json();
     setData(info.hits);
     setIsFetching(false);
+    console.log(info.hits)
   };
 
   useEffect(() => {
@@ -19,10 +21,11 @@ const ImageCard = () => {
   }, [text]);
 
 
-
   return (
     <>
       <SearchBar result={(text) => setText(text)} />
+
+      {info.status===429 && <h1 className="text-3xl text-center text-white mx-auto mt-32">API Out Of Limit. Try After Sometime </h1>}
       {!isFetching && data.length === 0 && <h1 className="text-5xl text-center text-white mx-auto mt-32">No Images Found</h1> }
 
       {isFetching ? <img src={Loader} alt=""  className="block mx-auto w-[80px]"/>
